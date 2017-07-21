@@ -23,8 +23,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $data = $request->session()->all();
+        echo '<pre>'; print_r($data);exit;
+
         return view('home');
     }
 }
